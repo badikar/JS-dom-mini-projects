@@ -6,9 +6,10 @@
 }
 
 /* fonts */
-@import url('https://fonts.googleapis.com/css?family=Karla:400|Spectral:400');
-
-/*16px*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600&family=Montserrat&display=swap');
+html {
+  font-size: 100%;
+} /*16px*/
 html {
   font-size: 100%;
 }
