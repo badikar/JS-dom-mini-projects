@@ -260,6 +260,43 @@ ul {
 
 /*
 =============
-
+Counter
 ============
- */
+*/
+main{
+  height: 100vh;
+  display:grid;
+  place-items: center;
+  /* albo flexem i align i justify center */
+
+}
+
+.container {
+  /* zamiennie z margin: 0 auto;n*/
+  text-align: center;
+}
+
+.container h1{
+  font-size: 4rem;
+  font-weight: 600;
+  margin-bottom: 0;
+
+}
+.container span {
+  font-size: 7rem;
+  font-weight: bold;
+  line-height: 1.25;
+}
+
+.btn-counter{
+  text-transform: uppercase;
+  background: transparent;
+  font-size: 1rem;
+  color: var(--black);
+  border: 2px solid var(--black);
+  margin: .5rem;
+}
+.btn-counter:hover {
+  background: var(--black);
+  color: var(--white);
+}

@@ -261,6 +261,24 @@ ul {
 
 /*
 =============
-
+Task manager
 ============
  */
+
+ main{
+   /* background: var(--grey-50); */
+  background-color: pink;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container{
+  background: red;
+  max-width: var(--fixed-width);
+  margin: 1rem
+}
+.creator{
+  background: yellow;
+}
