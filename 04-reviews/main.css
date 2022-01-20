@@ -263,3 +263,108 @@ ul {
 Reviews
 ============
  */
+ /* lepiej zrobic parent main i tam grida i height100%. a w containerze width 80vw (a nie w .review */
+.container {
+  display:grid;
+  place-items: center;
+}
+.title {
+  letter-spacing: var(--letterSpacing);
+  margin-top: 9rem;
+  margin-bottom: 3rem;
+}
+.review {
+  display: grid;
+  width: 80vw;
+  place-items: center;
+  max-width: var(--fixed-width);
+  background: var(--white);
+  box-shadow: var(--shadow-2);
+  border-radius: var(--borderRadius);
+}
+.review:hover {
+  box-shadow: var(--shadow-4);
+}
+.img-container {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  margin: 1.5rem 0;
+
+}
+.img{
+  position: absolute;
+  height: 100%;
+  border-radius: 50%;
+  top:50%;
+  left:50%;
+  transform: translate(-50% ,-50%);
+}
+
+/* NIGDY ::pseudoclass na IMG!!! */
+.img-container::before{
+  content: '';
+  width: 100%;
+  height: 100%;
+  background: var(--primary-500);
+  position: absolute;
+  top: -0.25rem;
+  left: 0.5rem;
+  border-radius: 50%;
+}
+.img-container::after{
+  /* obczaj ciekawe symnole!!! */
+  font-family: 'Font Awesome 5 Free';
+  content: '\f10e';
+  width: 2.5rem;
+  height:2.5rem ;
+  background: var(--primary-500);
+  position: absolute;
+  border-radius: 50%;
+  color: var(--white);
+  font-weight: 900;
+  top: 0.5rem;
+  left: 0;
+  display: grid;
+  place-items: center;
+}
+
+
+
+.review h4 {
+  margin-bottom: 0rem;
+  letter-spacing: var(--letterSpacing);
+}
+#job {
+  text-transform: uppercase;
+  color: var(--primary-500);
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.info{
+  padding: 0 2rem;
+  text-align: center;
+  margin: 0;
+}
+
+.button-container {
+  display: flex;
+  gap: 1.5rem;
+  margin: 1rem 0;
+}
+.prev-btn, .next-btn {
+  background: none;
+  border: none;
+  color:var(--primary-500);
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+.random-btn {
+  margin-bottom: 1.5rem;
+  background: var(--grey-100);
+  border: 2px solid var(--primary-500);
+  color: var(--primary-500);
+  cursor: pointer;
+}
