@@ -265,20 +265,142 @@ Task manager
 ============
  */
 
- main{
-   /* background: var(--grey-50); */
-  background-color: pink;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+ .task-form {
+  margin-top: 6rem;
+ }
+ .task-form h4 {
+  text-align: center;
+ }
+.submit-btn {
+  width:100%;
+  margin-top: 1rem
+}
+@media screen and (min-width:576px){
+  .form-control{
+    display: flex;
+  }
+  .task-input{
+    border-radius: 0;
+    border-top-left-radius: var(--borderRadius);
+    border-bottom-left-radius: var(--borderRadius);
+
+  }
+  .submit-btn {
+    margin-top: 0;
+    border-radius: 0;
+    border-top-right-radius: var(--borderRadius);
+    border-bottom-right-radius: var(--borderRadius);
+    width: 175px;
+  }
+}
+.text-succes{
+  color: var(--green-dark);
 }
 
-.container{
-  background: red;
+/*
+=============
+Tasks
+============
+ */
+.tasks-container{
+  width: 90vw;
   max-width: var(--fixed-width);
-  margin: 1rem
+  margin: 0 auto;
+  margin-top: 2rem;
+  padding-bottom: 4rem;
 }
-.creator{
-  background: yellow;
+.tasks{
+  display: grid;
+  gap: 1rem; /* albo margin-bottom w each .single task*/
+}
+.single-task{
+  padding: 1rem 2.5rem;
+  background: var(--white);
+  border-radius: var(--borderRadius);
+  box-shadow: var(--shadow-2);
+  transition: var(--transition);
+  display: flex;
+  justify-content: space-between;
+  align-items:center;
+}
+.single-task:hover{
+  box-shadow: var(--shadow-4);
+}
+.single-task h5 {
+  margin-bottom: 0;
+}
+.single-task .fa-check-circle{
+  margin-left:-1.25rem;
+  margin-right: 1.5rem;
+  font-size: 1rem;
+  color: var(--green-dark);
+  /* gdy display:none -> przesunie sie h5, changes layout */
+  visibility: hidden;
+}
+.task-completed h5{
+  text-decoration: line-through;
+}
+.task-completed .fa-check-circle{
+  visibility:visible;
+}
+.task-links{
+  display: flex;
+  align-items: center;
+  gap: 0 0.5rem
+}
+.delete-btn, .edit-link{
+  background:transparent;
+  font-size: .75rem;
+  border: transparent;
+  cursor: pointer;
+}
+.edit-link{
+  color: var(--green-dark);
+}
+.delete-btn{
+  color:var(--red-dark)
+}
+
+/*
+=============
+Single Task
+============
+*/
+.single-task-form{
+  margin-top: 6rem;
+}
+.single-task-form h4{
+  text-align: center;
+}
+.single-task-form p{
+  margin-top:0;
+  margin-bottom: 0;
+}
+.single-task-form .form-control {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  align-items: center;
+  gap: 0 1rem;
+}
+.single-task-form label{
+  margin-bottom: 0;
+  font-size: 1rem;
+}
+.back-link {
+  display: block;
+  width: 250px;
+  /* z inline-block nie wycentruje... */
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 6rem;
+  background-color: var(--black);
+}
+.back-link:hover{
+  /* bo inherited z .btn by robilo na blue */
+  background-color: var(--black);
+  opacity:.75
+}
+.single-task-form .form-alert {
+  text-align: center;
+  margin-top: 1rem;
 }

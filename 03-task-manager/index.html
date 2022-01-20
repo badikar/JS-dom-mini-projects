@@ -13,33 +13,59 @@
     <link rel="stylesheet" href="./main.css" />
   </head>
   <body>
-    <main>
-      <div class="container">
-        <form action="" class="form task-form">
-          <h2>task manager</h2>
-          <form action="">
-            <input type="text" placeholder="e.g. wash dishes" />
-            <button class="btn" type="submit">submit</button>
-          </form>
-          <h4>there as an error</h4>
-        </section>
-        <h4>loading...</h4>
-        <article class="task">
-          <h3>task name</h3>
-          <div class="task-icons">
-            <i class="fas fa-edit"></i>
-            <i class="fas fa-trash"></i>
-          </div>
-        </article>
-        <article class="task-removed">
-          <h3>task name</h3>
-          <div class="task-icons">
-            <i class="fas fa-edit"></i>
-            <i class="fas fa-trash"></i>
-          </div>
-        </article>
-      </form>
+    <form class="form task-form">
+      <h4>task manager</h4>
+      <div class="form-control">
+        <input
+          class="form-input task-input"
+          type="text"
+          name="name"
+          placeholder="e.g. wash dishes"
+        />
+        <button class="btn submit-btn" type="submit">submit</button>
       </div>
-    </main>
+      <small class="form-alert">there as an error</small>
+    </form>
+    <section class="tasks-container">
+      <p class="loading-text">Loading...</p>
+      <div class="tasks">
+        <!-- single task -->
+        <div class="single-task">
+          <h5>
+            <i class="far fa-check-circle"></i>
+            first task
+          </h5>
+          <div class="task-links">
+            <!-- edit link -->
+            <a href="task.html" class="edit-link">
+              <i class="fas fa-edit"></i>
+            </a>
+            <!-- delete btn -->
+            <button type="button" class="delete-btn" data-id="123">
+              <i class="fas fa-trash"></i>
+            </button>
+          </div>
+        </div>
+        <!-- end of single task -->
+        <!-- single task -->
+        <div class="single-task task-completed">
+          <h5>
+            <i class="far fa-check-circle"></i>
+            second task
+          </h5>
+          <div class="task-links">
+            <!-- edit link -->
+            <a href="task.html" class="edit-link">
+              <i class="fas fa-edit"></i>
+            </a>
+            <!-- delete btn -->
+            <button type="button" class="delete-btn" data-id="123">
+              <i class="fas fa-trash"></i>
+            </button>
+          </div>
+        </div>
+        <!-- end of single task -->
+      </div>
+    </section>
   </body>
 </html>
