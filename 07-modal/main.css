@@ -260,6 +260,63 @@ ul {
 
 /*
 =============
-
+MODAL
 ============
- */
+*/
+.hero {
+  min-height: 100vh;
+  background: url(./hero.jpeg) center/cover no-repeat;
+  display: grid;
+  place-items: center;
+}
+.banner{
+  background: var(--white);
+  place-items: center;
+  width: 85vw;
+  max-width: var(--fixed-width);
+  text-align: center;
+  padding: 4rem 0 ;
+  border-radius: var(--borderRadius);
+  box-shadow: var(--shadow-2);
+}
+.modal-overlay{
+  position:fixed;
+  inset: 0; /* zamiast top-left/w-h albo top/l/r/b:0*/
+  background: rgba(0, 0, 0, 0.6);
+  display: grid;
+  place-items: center;
+  visibility: hidden;
+  z-index: -1;
+  transition: var(--transition);
+}
+.open-modal {
+  /* display: grid -> tez zadziala, ale wtedy transition nie bedzie... */
+  visibility: visible;
+  z-index: 10;
+}
+.modal-container {
+  background: var(--white);
+  border-radius: var(--borderRadius);
+  width: 90vw;
+  max-width: var(--fixed-width);
+  /* padding: 6rem 0;---> lepiej vh*/
+  height: 35vh;
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+
+.close-btn{
+  position:absolute;
+  top: 2rem;
+  right: 2rem;
+  font-size: 2rem;
+  color: var(--red-dark);
+  background: transparent;
+  border: transparent;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.close-btn:hover{
+  transform: rotate(-90deg) scale(1.2);
+}
