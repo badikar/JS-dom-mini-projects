@@ -24,17 +24,17 @@ html {
   --primary-800: #282465;
   --primary-900: #141233;
 
-    /* grey */
-    --grey-50: #f8fafc;
-    --grey-100: #f1f5f9;
-    --grey-200: #e2e8f0;
-    --grey-300: #cbd5e1;
-    --grey-400: #94a3b8;
-    --grey-500: #64748b;
-    --grey-600: #475569;
-    --grey-700: #5c95e4;
-    --grey-800: #1e293b;
-    --grey-900: #0f172a;
+  /* grey */
+  --grey-50: #f8fafc;
+  --grey-100: #f1f5f9;
+  --grey-200: #e2e8f0;
+  --grey-300: #cbd5e1;
+  --grey-400: #94a3b8;
+  --grey-500: #64748b;
+  --grey-600: #475569;
+  --grey-700: #334155;
+  --grey-800: #1e293b;
+  --grey-900: #0f172a;
     /* rest of the colors */
 
   --black: #222;
@@ -261,6 +261,102 @@ ul {
 
 /*
 =============
-
+Grocery Bud
 ============
  */
+ .section-center {
+   background-color: var(--white);
+   width: 90vw;
+   max-width: var(--fixed-width);
+   margin: 0 auto;
+   margin-top: 10rem;
+   padding: 1rem;
+   box-shadow: var(--shadow-2);
+ }
+ .section-center:hover{
+  box-shadow: var(--shadow-4);
+ }
+ .alert{
+   text-align: center;
+   text-transform: capitalize;
+   font-size: var(--smallText);
+   letter-spacing: var(--letterSpacing);
+ }
+ .alert-danger {
+  color: #721c24;
+  background: #f8d7da;
+}
+.alert-success {
+  color: #155724;
+  background: #d4edda;
+}
+.grocery-form h4{
+  text-align: center;
+  letter-spacing: var(--letterSpacing);
+  margin-bottom: 1.5rem;
+}
+
+.grocery-form .form-row {
+  display: flex;
+}
+
+.grocery-form .form-input {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.submit-btn {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  width: 100px;
+  font-size: var(--smallText);
+}
+.grocery-container{
+  margin-top: 2rem;
+}
+.grocery-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  transition: var(--transition);
+  padding: 0.25rem 1rem;
+  border-radius: var(--borderRadius);
+  text-transform: capitalize;
+  color: var(--grey-700);
+}
+.grocery-item:hover {
+  color: var(--grey-500);
+  background: var(--grey-100);
+}
+.edit-btn,
+.delete-btn {
+  background: transparent;
+  box-shadow: none;
+  cursor: pointer;
+  font-size: 0.7rem;
+  transition: var(--transition);
+}
+.edit-btn:hover,
+.delete-btn:hover{
+  background-color: var(--grey-900);
+  color: var(--white);
+}
+.edit-btn {
+  color: var(--green-dark);
+}
+
+.delete-btn {
+  color: var(--red-dark);
+}
+
+.clear-btn {
+  color: var(--red-dark);
+  width: 100%;
+  margin-top: 1rem;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  text-transform: capitalize;
+  text-align: center;
+  letter-spacing: var(--letterSpacing);
+}

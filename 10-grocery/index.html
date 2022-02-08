@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Color Flipper</title>
+    <title>Grocery List</title>
     <!-- normalize css -->
     <link rel="stylesheet" href="./normalize.css" />
     <!-- font awesome -->
@@ -13,6 +13,50 @@
     <link rel="stylesheet" href="./main.css" />
   </head>
   <body>
-    <h1>Color Flipper</h1>
+    <section class="section-center">
+      <!-- form -->
+      <form action="" class="grocery-form">
+        <div class="alert alert-danger">please enter value</div>
+        <h4>grocery bud</h4>
+        <div class="form-row">
+          <input type="text" class="form-input" placeholder="e.g. eggs" />
+          <button type="submit" class="submit-btn btn text-small">submit</button>
+        </div>
+      </form>
+      <!-- list -->
+      <div class="grocery-container">
+        <div class="grocery-list">
+          <!-- grocery-item -->
+          <article class="grocery-item">
+            <span class="title">wash dishes</span>
+            <div class="btn-container">
+              <!-- edit btn -->
+              <button class="btn edit-btn">
+                <i class="fas fa-edit"></i>
+              </button>
+              <!-- delete btn -->
+              <button class="btn delete-btn">
+                <i class="fas fa-trash"></i>
+              </button>
+            </div>
+          </article>
+          <!-- grocery-item -->
+          <article class="grocery-item">
+            <span class="title">laundry</span>
+            <div class="btn-container">
+              <!-- edit btn -->
+              <button class="btn edit-btn">
+                <i class="fas fa-edit"></i>
+              </button>
+              <!-- delete btn -->
+              <button class="btn delete-btn">
+                <i class="fas fa-trash"></i>
+              </button>
+            </div>
+          </article>
+        </div>
+        <button class="clear-btn">clear items</button>
+      </div>
+    </section>
   </body>
 </html>
