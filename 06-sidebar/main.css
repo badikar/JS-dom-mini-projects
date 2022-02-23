@@ -25,16 +25,16 @@ html {
   --primary-900: #141233;
 
   /* grey */
-  --grey-50: #f9fafb;
-  --grey-100: #e2e0ff;
-  --grey-200: #c1beff;
-  --grey-300: #a29dff;
-  --grey-400: #837dff;
-  --grey-500: #645cff;
-  --grey-600: #504acc;
-  --grey-700: #3c3799;
-  --grey-800: #282465;
-  --grey-900: #141233;
+  --grey-50: #f8fafc;
+  --grey-100: #f1f5f9;
+  --grey-200: #e2e8f0;
+  --grey-300: #cbd5e1;
+  --grey-400: #94a3b8;
+  --grey-500: #64748b;
+  --grey-600: #475569;
+  --grey-700: #334155;
+  --grey-800: #1e293b;
+  --grey-900: #0f172a;
 
   --black: #222;
   --white: #fff;
@@ -301,9 +301,12 @@ Sidebar
   /* top: 0;
   left: 0;
   width: 100%;
-  height:100%; or
+  height:100%;
+  or
   right: 0;
-  bottom: 0;  or */
+  bottom: 0;
+  or
+  INSET!!! */
   inset: 0;
   display: grid;
   grid-template-rows: auto 1fr auto;
@@ -311,7 +314,7 @@ Sidebar
   background: var(--white);
   box-shadow: var(--shadow-2);
   transition: var(--transition);
-  transform: translate(-100%); /* TUUU!!!!!!!!!!!!!!!*/
+  transform: translate(-100%); /* TUUU!!!!!!!!*/
 }
 .show-sidebar{
   transform: translate(0);
@@ -338,14 +341,14 @@ Sidebar
   cursor: pointer;
 }
 .close-btn:hover {
-  transform: rotate(360deg);
+  transform: rotate(90deg);
 }
 .logo h4{
   margin-bottom:0;
   letter-spacing: var(--letterSpacing);
   font-weight: 600;
   font-size: 1.75rem;
-  box-shadow: var(--shadow-1)
+  /* box-shadow: var(--shadow-1) */
 }
 .logo span{
   text-transform: capitalize;
