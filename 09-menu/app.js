@@ -71,35 +71,35 @@ const menu = [
     img: './images/item-9.jpeg',
     desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
   },
+  {
+    id: 10,
+    title: 'TESTING',
+    category: 'testing',
+    price: 15.99,
+    img: './images/item-1.jpeg',
+    desc: `I'm baby woke mlkshk wolf bitters live-edge blue bottle, hammock freegan copper mug whatever cold-pressed `,
+  },
 ];
 
 // select items
+// pamietaj, ze dynamicznie stworzone batony trzeba selektowac pozniej, nie tutaj!!!
 const sectionCenter = document.querySelector('.section-center');
-const filterBtns = document.querySelectorAll('.filter-btn');
+const btnContainer = document.querySelector('.btn-container');
+
+// in ES6 there is easier way but this is good for reducer in redux react
+// if values czyli accumulator (which is the array i return) does not include category, just add it to values array (accumulate)
+// values == accumulator
+// item == current itteration
+// ['all'] - is initial value, just a string 'ALL', usually 0 i wtedy dodaje do koszyka
 
 // load initial menu
 window.addEventListener('DOMContentLoaded', () => {
   displayMenuItems(menu);
-});
-
-//filter items
-filterBtns.forEach((btn) => {
-  btn.addEventListener('click', (e) => {
-    const category = e.currentTarget.dataset.id;
-    const menuCategory = menu.filter((menuItem) => {
-      if (menuItem.category === category) {
-        return menuItem;
-      }
-    });
-    if (category === 'all') {
-      displayMenuItems(menu);
-    } else {
-      displayMenuItems(menuCategory);
-    }
-  });
+  displayCategoryBtns();
 });
 
 // with .map() we can modify the array
+// tu jest LET i wtedy osobno .join(), ale mozna const i od razu za nim.join() - jak w categoryBtns
 const displayMenuItems = (menuItems) => {
   let displayMenu = menuItems.map((item) => {
     return `<article class="menu-item">
@@ -119,4 +119,40 @@ const displayMenuItems = (menuItems) => {
   });
   displayMenu = displayMenu.join('');
   sectionCenter.innerHTML = displayMenu;
+};
+
+const displayCategoryBtns = () => {
+  const category = menu.reduce(
+    (values, item) => {
+      if (!values.includes(item.category)) {
+        values.push(item.category);
+      }
+      return values;
+    },
+    ['all']
+  );
+  const categoryBtns = category
+    .map((category) => {
+      return ` <button type="button" class="btn filter-btn" data-id=${category}>${category}</button>`;
+    })
+    .join('');
+  btnContainer.innerHTML = categoryBtns;
+
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  //filter items
+  filterBtns.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      const category = e.currentTarget.dataset.id;
+      const menuCategory = menu.filter((menuItem) => {
+        if (menuItem.category === category) {
+          return menuItem;
+        }
+      });
+      if (category === 'all') {
+        displayMenuItems(menu);
+      } else {
+        displayMenuItems(menuCategory);
+      }
+    });
+  });
 };

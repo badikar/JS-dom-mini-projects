@@ -302,6 +302,7 @@ Menu
   height: 200px;
   border-radius: var(--borderRadius);
 }
+
 .item-info header {
   display: flex;
   justify-content: space-between;
