@@ -23,6 +23,7 @@ navToggle.addEventListener('click', () => {
   // height: auto !important; bo js robi inline style
   const containerHeight = linksContainer.getBoundingClientRect().height;
   const linksHeight = links.getBoundingClientRect().height;
+  console.log(linksHeight);
   if (containerHeight === 0) {
     linksContainer.style.height = `${linksHeight}px`;
   } else {
