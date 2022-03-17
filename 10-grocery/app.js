@@ -64,7 +64,12 @@ function addItem(e) {
     setBackToDefault();
     //
   } else if (value && editFlag) {
-    console.log(editing);
+    editElemnent.innerHTML = value;
+    displayAlert('value changed', 'success');
+    // edit local storage
+    editLocalStorage(editId, value);
+
+    setBackToDefault();
   } else {
     displayAlert('please enter value', 'danger');
   }
@@ -94,15 +99,33 @@ function clearItems() {
   setBackToDefault();
   // localStorage.removeItem('list');
 }
-
 // edit function
-function editItem() {
-  console.log('edit');
+function editItem(e) {
+  const element = e.currentTarget.parentElement.parentElement;
+  // set edit item
+  editElement = e.currentTarget.parentElement.previousElementSibling;
+  // set form value
+  grocery.value = editElement.innerHTML;
+  editFlag = true;
+  editID = element.dataset.id;
+  //
+  submitBtn.textContent = 'edit';
 }
 
 // delete item
-function deleteItem() {
-  console.log('delete');
+function deleteItem(e) {
+  // dostac sie do list czyli dziadek
+  const element = e.currentTarget.parentElement.parentElement;
+  const id = element.dataset.id;
+
+  list.removeChild(element);
+  if (list.children.length === 0) {
+    container.classList.remove('show-container');
+  }
+  displayAlert('item removed', 'danger');
+  setBackToDefault();
+  //  remove from locatStorage
+  // removeFromLocalStorage(id);
 }
 
 // set back to defailt
@@ -117,5 +140,6 @@ function setBackToDefault() {
 function addToLocalStorage(id, value) {
   console.log('add to local storage');
 }
-
+function removeFromLocalStorage(id) {}
+function editLocalStorage(id, value) {}
 // ****** SETUP ITEMS **********
