@@ -96,3 +96,5 @@ const products = [
     price: 9.99,
   },
 ];
+
+export default products;
