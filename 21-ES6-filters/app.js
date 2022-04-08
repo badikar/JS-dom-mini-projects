@@ -30,6 +30,7 @@ const displayProducts = () => {
 
 displayProducts();
 
+//  filter by SEARCH INPUT
 const form = document.querySelector('.input-form');
 const searchInput = document.querySelector('.search-input');
 
@@ -41,4 +42,33 @@ form.addEventListener('keyup', () => {
   });
   console.log(filteredProducts);
   displayProducts();
+});
+
+const companiesDOM = document.querySelector('.companies');
+
+//  display filter buttons
+const displayButtons = () => {
+  const buttons = ['all', ...new Set(products.map((product) => product.company))];
+  companiesDOM.innerHTML = buttons
+    .map((company) => {
+      return `<button class="company-btn" data-id="${company}">${company}</button>`;
+    })
+    .join('');
+};
+displayButtons();
+
+// filter based on company
+companiesDOM.addEventListener('click', (e) => {
+  const el = e.target;
+  if (el.classList.contains('company-btn')) {
+    if (el.dataset.id === 'all') {
+      filteredProducts = [...products];
+    } else {
+      filteredProducts = products.filter((product) => {
+        return product.company === el.dataset.id;
+      });
+    }
+    searchInput.value = '';
+    displayProducts();
+  }
 });
