@@ -1,23 +1,36 @@
+const url = 'https://course-api.com/javascript-store-single-product';
+// '?id=sduc&name=ccc&age=...' usuniete i podmianka dynamicznie
 const productDOM = document.querySelector('.product');
-const url = 'https://course-api.com/javascript-store-single-product?id=rec43w3ipXvP28vog';
-
-const productColor = document.querySelector('.product-color');
 
 const fetchProduct = async () => {
   try {
-    const res = await fetch(url);
+    productDOM.innerHTML = `<h4 class="product-loading">loading...</h4>`;
+    // query string params - id!!! we have api for that:)
+    // console.log(window.location.search);
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('id');
+
+    const res = await fetch(`${url}?id=${id}`);
     const data = res.json();
     return data;
-  } catch (error) {}
+  } catch (error) {
+    productDOM.innerHTML = '<p class="error">There was an error...</p>';
+  }
 };
 
 const displayProduct = (item) => {
   const id = item.id;
-  const { name: title, price, company, description } = item.fields;
+  const { name: title, price, company, description, colors } = item.fields;
   const formatPrice = price / 100;
-  item.fileds;
   const img = item.fields.image[0].url;
-  console.log(img);
+  // change page title dynamically
+  document.title = title.toUpperCase();
+  // item colors rendered dynamically
+  const colorsList = colors
+    .map((color) => {
+      return `<span class="product-color" style="background: ${color}"></span>`;
+    })
+    .join('');
 
   productDOM.innerHTML = `<div class="product-wrapper" data-id=${id}>
   <img
@@ -27,10 +40,10 @@ const displayProduct = (item) => {
   <div class="product-info">
       <h3>${title}</h3>
       <h5>${company}</h5>
-      <span>${formatPrice}</span>
+      <span>${formatPrice}£</span>
       <div class="colors">
-          <span class="product-color"></span>
-          <span class="product-color" style="background: red"></span>
+      <span class="product-color"></span>
+          ${colorsList}
       </div>
       <p>${description}</p>
       <button class="btn">add to cart</button>

@@ -22,7 +22,7 @@ const displayProducts = (list) => {
       const { url: img } = product.fields.image[0];
       const formatPrice = price / 100;
       //query string params - after ${id} we can add "& key-value ile sie chce - look product.html url"
-      return `<a class="single-product" href="product.html?id=${id}&key=value&imie=ja&age=33">
+      return `<a class="single-product" href="product.html?id=${id}&key=value&imie=ja&age=35">
           <img
             src="${img}"
             class="single-product-img img"
