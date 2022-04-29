@@ -1,4 +1,5 @@
 import get from './getElement.js';
+import { hideLoading } from './toggleLoading.js';
 
 //  to zdestrukturyzowane DRINKS z obiektu DATA ktory sfeczowalem
 const displayDrinks = ({ drinks }) => {
@@ -6,7 +7,7 @@ const displayDrinks = ({ drinks }) => {
   const title = get('.title');
 
   if (!drinks) {
-    //   hide loading
+    hideLoading();
     title.textContent = 'sorry, no drinks matched your serach';
     section.innerHTML = null;
     return;
@@ -25,7 +26,7 @@ const displayDrinks = ({ drinks }) => {
     </a>`;
     })
     .join('');
-  // hide loading
+  hideLoading();
   title.textContent = '';
   section.innerHTML = newDrinks;
   return section;
