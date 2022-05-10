@@ -13,7 +13,10 @@ const init = async () => {
   if (products) {
     //   add products to store
     setupStore(products);
-    console.log(store);
+    // getting back LET store
+    //  getting only those for featured section in index.html
+    const featured = store.filter((product) => product.featured === true);
+    display(featured, getElement('.featured-center'));
   }
   //   and IF NOT => loading...
 };

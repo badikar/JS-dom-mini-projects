@@ -17,8 +17,22 @@ const getElement = (selection) => {
 
 const formatPrice = () => {};
 
-const getStorageItem = () => {};
-const setStorageItem = () => {};
+// w STORE.JS tworze set/get storageItem. will be used in cartItem.js as well
+const getStorageItem = (item) => {
+  let storageItem = localStorage.getItem(item);
+  // (if [] we get undefined which is faulsy)
+  if (storageItem) {
+    storageItem = JSON.parse(localStorage.getItem(item));
+  } else {
+    storageItem = [];
+  }
+  return storageItem;
+};
+
+// in APP.JS we invoke setStorage, soit is not in Products and CartItem.JS. JS(we would have to repeat that setupStorage() there). Thats why we use LOCAL STORAGE
+const setStorageItem = (name, item) => {
+  localStorage.setItem(name, JSON.stringify(item));
+};
 
 export {
   allProductsUrl,
