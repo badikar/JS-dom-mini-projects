@@ -15,7 +15,15 @@ const getElement = (selection) => {
   throw new Error(`Please check "${selection}" selector, no such element exist`);
 };
 
-const formatPrice = () => {};
+// payments like strapi are in CENTS so safe this way
+// i can simply do {price/100} when rendering
+const formatPrice = (price) => {
+  let formattedPrice = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+  }).format((price / 100).toFixed(2));
+  return formattedPrice;
+};
 
 // w STORE.JS tworze set/get storageItem. will be used in cartItem.js as well
 const getStorageItem = (item) => {

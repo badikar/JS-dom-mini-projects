@@ -21,11 +21,18 @@ const display = (products, element) => {
        </div>
        <footer>
          <p class="product-name">${name}</p>
-         <h4 class="product-price">$4.99</h4>
+         <h4 class="product-price">${formatPrice(price)}</h4>
        </footer>
      </article>`;
     })
     .join('');
+  element.addEventListener('click', function (e) {
+    const parent = e.target.parentElement;
+    //  we want button, not icon
+    if (parent.classList.contains('product-cart-btn')) {
+      addToCart(parent.dataset.id);
+    }
+  });
 };
 
 export default display;
