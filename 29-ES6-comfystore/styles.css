@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
 /*
-=============== 
+===============
 Variables
 ===============
 */
@@ -47,7 +47,7 @@ Variables
   --fixed-width: 620px;
 }
 /*
-=============== 
+===============
 Global Styles
 ===============
 */
@@ -60,8 +60,8 @@ Global Styles
   box-sizing: border-box;
 }
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+    'Open Sans', 'Helvetica Neue', sans-serif;
   background: var(--clr-white);
   color: var(--clr-grey-1);
   line-height: 1.5;
@@ -173,7 +173,7 @@ p {
   justify-content: center;
 }
 /*
-=============== 
+===============
 Navbar
 ===============
 */
@@ -283,7 +283,7 @@ Navbar
   color: var(--clr-grey-1);
 }
 /*
-=============== 
+===============
 Hero
 ===============
 */
@@ -343,7 +343,7 @@ Hero
 }
 
 /*
-=============== 
+===============
 Sidebar
 ===============
 */
@@ -404,7 +404,7 @@ Sidebar
   }
 }
 /*
-=============== 
+===============
 Cart
 ===============
 */
@@ -514,7 +514,7 @@ Cart
   padding: 0.25rem;
 }
 /*
-=============== 
+===============
 Title
 ===============
 */
@@ -531,7 +531,7 @@ Title
   margin-right: 1rem;
 }
 /*
-=============== 
+===============
 product
 ===============
 */
@@ -616,7 +616,7 @@ product
   }
 }
 /*
-=============== 
+===============
 About Page
 ===============
 */
@@ -628,7 +628,7 @@ About Page
 }
 
 /*
-=============== 
+===============
 Products Page
 ===============
 */
@@ -641,6 +641,7 @@ Products Page
   position: relative;
 }
 .filters-container {
+  /* dzieki temu zjezdza jak skroluje produckty */
   position: sticky;
   top: 1rem;
 }
@@ -659,6 +660,13 @@ Products Page
 .search-input::placeholder {
   text-transform: capitalize;
 }
+/*  WAZNE- DODANE bo input doenst inherit css from parents sometimes - firefox nie robi ostepu searcha od foto */
+
+input {
+  width: 100%;
+  max-width: 12rem;
+}
+
 .company-btn {
   display: block;
   margin: 0.25em 0;
@@ -717,7 +725,7 @@ Products Page
   margin-top: 4rem;
 }
 /*
-=============== 
+===============
 Single Product Page
 ===============
 */
